@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pendaftaran Kegiatan</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+<header>
+     <img src="gambar_6.jpg" alt="Selamat Datang">
+    <h1>Kegiatan Komunitas</h1>
+    <nav aria-label="Navigasi utama">
+            <ul class="nav-list">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="daftar.html" aria-current="page" >Daftar</a></li>
+            </ul>
+        </nav>
+</header>
+    <main>
+        <h1>Pendaftaran Kegiatan</h1>
+        <p>Kolom bertanda wajib harus diisi.</p>
+        <form action="/lanjut" method="get">
+            <label for="nama">Nama lengkap (wajib)</label>
+            <input id="nama" name="nama" autocomplete="name" required>
+            <label for="email">Email (wajib)</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <label for="telepon">Telepon (wajib)</label>
+            <input id="telepon" name="telepon" type="tel" autocomplete="tel" required>
+            <br>
+            <label for="prodi">Program studi (wajib)</label>
+            <select id="prodi" name="prodi" required>
+                <option value="">Pilih program studi</option>
+                <option value="trpl">D4 TRPL</option>
+                <option value="ti">D3 Teknologi Informasi</option>
+            </select>
+            <label for="jumlah">Jumlah tiket (1-5, wajib)</label>
+            <input id="jumlah" name="jumlah" type="number" min="1" max="5" step="1" required>
+            <fieldset>
+                <legend>Mode kehadiran (wajib)</legend>
+                <input id="luring" name="mode" type="radio" value="luring" required>
+                <label for="luring">Luring</label>
+                <input id="daring" name="mode" type="radio" value="daring">
+                <label for="daring">Daring</label>
+            </fieldset>
+            <fieldset>
+                <legend>Minat Topik HTML</legend>
+                <input id="Minat" name="mode" type="checkbox" value="Minat" required>
+                <label for="Minat">Ya saya Minat</label><br>
+                <input id="Tidak-Minat" name="mode" type="checkbox" value="Tidak-Minat">
+                <label for="Tidak-Minat">Tidak Saya tidak Minat</label><br>
+                <input id="Biasa" name="mode" type="checkbox" value="Biasa">
+                <label for="Biasa">B aja</label><br>
+            </fieldset><br>
+            <label for="kode">Kode peserta (6 angka, wajib)</label>
+            <p id="kode-help">Contoh: 001234. Gunakan tepat enam angka.</p>
+            <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}" aria-describedby="kode-help" required>
+            <figure>
+            <img src="https://semat.del.ac.id/assets/img/fasilitas/opentheater.jpg" alt="Samping Gedung 5" width=400>
+            <figcaption>Lokasi kegiatan: Open Teater.</figcaption>
+            </figure>
+            <label for="catatan">Catatan (opsional)</label>
+            <textarea id="catatan" name="catatan" rows="4" maxlength="300"></textarea>
+            <button type="submit">Daftar</button>
+        </form>
+    </main>
+</body>
+
+</html>

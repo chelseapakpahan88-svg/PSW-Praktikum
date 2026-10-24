@@ -1,0 +1,1 @@
+Debugging adalah proses mencari, menemukan, dan memperbaiki kesalahan (error) yang ada di dalam program atau kode. Kesalahan tersebut bisa menyebabkan program tidak berjalan, muncul pesan error, atau hasil yang ditampilkan tidak sesuai dengan yang kita inginkan.

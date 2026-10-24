@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jadwal dan daftar kegiatan Komunitas Web Mahasiswa.">
+    <title>Kegiatan | Komunitas Web Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SELAMAT DATANG DI SITUS KAMI</h1>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="#kegiatan" aria-current="page">Kegiatan</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    <p>Halaman pertama Pengembangan Situs Web I.</p>
+    </header>
+    <main>
+        <section id="profil">
+            <h2>Profil Singkat</h2>
+            <p>Chelsea S. Pakpahan. Saya sedang belajar web.</p>
+            <button type="button" id="greeting-button">
+                Tampilkan Salam
+            </button>
+        </section>
+        <section id="tujuan">
+            <h2>Tujuan Belajar</h2>
+            <ul>
+                <li>Memahami cara kerja web</li>
+                <li>Membuat halaman HTML</li>
+                <li>Menggunakan Git</li>
+            </ul>
+            <figure>
+                <img src="gambar_1.jpg" alt="Bunga-bunga" width="350" height="250">
+                <figcaption>Bunga-bunga</figcaption>
+            </figure>
+        </section>
+        <section id="kegiatan">
+            <h2>Kegiatan Mahasiswa</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Lokakarya HTML</h3>
+                    <p>Belajar struktur.</p>
+                </article>
+                <article class="card">
+                    <h3>Diskusi CSS</h3>
+                    <p>Belajar tampilan.</p>
+                </article>
+                <article class="card">
+                    <h3>Audit Web</h3>
+                    <p>Menguji kualitas.</p>
+                </article>
+            </div>
+        </section>
+        <section id="pendaftaran">
+            <h2>Pendaftaran Kegiatan</h2>
+            <form class="card" action="#" method="get">
+            <p class="notice">Kolom bertanda wajib harus diisi.</p>
+                <label for="nama">Nama lengkap (wajib)</label>
+                <input id="nama" name="nama" type="text"
+                    autocomplete="name" required>
+                <br>
+                <label for="telepon">Nomor Telepon (wajib)</label>
+                <input id="telepon" name="telepon" type="tel"
+                    autocomplete="tel" required>
+                   <br>
+                <label for="email">Email (wajib)</label>
+                <input id="email" name="email" type="email"
+                    autocomplete="email" required>
+                <br>
+                <label for="tiket">Jumlah Tiket (wajib)</label>
+                <input id="tiket" name="tiket" type="number"
+                    min="1" max="5" step="1" required>
+                <br>
+                <label for="kode">Kode peserta (6 angka, wajib)</label>
+                <p id="kode-help">Masukkan kode yang terdiri dari 6 angka.</p>
+                <input id="kode" name="kode" type="text"
+                    inputmode="numeric" pattern="[0-9]{6}"
+                    aria-describedby="kode-help" required>
+                <br>
+                <label for="prodi">Program Studi (wajib)</label>
+                <select id="prodi" name="prodi" required>
+                    <option value="">Pilih program studi</option>
+                    <option value="trpl">D4 TRPL</option>
+                    <option value="ti">D3 Teknologi Informasi</option>
+                </select>
+                <fieldset>
+                    <legend>Mode kehadiran (wajib)</legend>
+                    <input id="luring" name="mode" type="radio"
+                        value="luring" required>
+                    <label for="luring">Luring</label>
+                    <input id="daring" name="mode" type="radio"
+                        value="daring">
+                    <label for="daring">Daring</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Minat Topik HTML (wajib)</legend>
+                    <input id="html" name="minat" type="checkbox"
+                        value="HTML" required>
+                    <label for="html">HTML</label>
+                    <br>
+                    <input id="aksesibilitas" name="minat"
+                        type="checkbox" value="aksesibilitas">
+                    <label for="aksesibilitas">Aksesibilitas HTML</label>
+                </fieldset>
+                <figure>
+                    <img src="gambar_2.jpg" alt="Taman lokasi kegiatan"
+                        width="200" height="150">
+                    <figcaption>Lokasi kegiatan: Taman.</figcaption>
+                </figure>
+                <label for="catatan">Catatan (opsional)</label>
+                <textarea id="catatan" name="catatan"
+                    rows="4" maxlength="100"></textarea>
+                <br><br>
+                <button type="submit">Daftar</button>
+            </form>
+        </section>
+    </main>
+    <footer id="kontak">
+        <p>Kontak: kegiatan@example.com</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

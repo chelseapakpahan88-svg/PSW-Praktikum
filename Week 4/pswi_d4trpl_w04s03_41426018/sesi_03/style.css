@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; }
+:root { --brand: #175cd3; --space: 1rem;
+        --surface: white; --ink: #243244; }
+
+
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background: #f0a9d4;
+}
+
+header{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgb(252, 199, 225);
+    border: 1px solid #fca0da;
+    border-radius: 50px;
+}
+
+main { width: 90%; max-width: 60rem; margin-inline: auto; }
+
+
+h1 { font-size: 2rem; line-height: 1.2; }
+p { max-width: 65ch; }
+
+button {
+    padding: .75rem 1rem;
+    color: white;
+    background: #f07bb7;
+    border: 0;
+
+}
+
+.card { padding: var(--space); background: var(--surface); }
+.notice {
+    color: #cdd1d7;
+}
+
+button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--brand); outline-offset: 3px;
+}
