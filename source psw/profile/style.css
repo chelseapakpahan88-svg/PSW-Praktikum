@@ -1,0 +1,87 @@
+
+/* Mengatur tampilan dasar seluruh halaman */
+body {
+    background-color: #edf3f5; /* Latar belakang abu-abu kebiruan */
+    font-family: "Times New Roman", serif; /* Jenis huruf halaman */
+    text-align: center; /* Membuat teks rata tengah */
+    margin: 0; /* Menghilangkan jarak luar bawaan browser */
+    padding: 0; /* Menghilangkan jarak dalam bawaan browser */
+    color: #333333; /* Warna teks utama */
+}
+
+/* Mengatur tampilan header */
+header {
+    background-color: #ffc4f9; /* Warna merah muda seperti website sebelumnya */
+    color: #333333; /* Warna teks header */
+    padding: 20px; /* Memberikan ruang di dalam header */
+    border-bottom: 3px solid #f9d6ec; /* Garis bawah merah muda */
+}
+
+/* Mengatur judul utama */
+header h1 {
+    margin: 0; /* Menghilangkan jarak bawaan judul */
+    font-size: 28px; /* Mengatur ukuran judul */
+}
+
+/* Mengatur kotak profil mahasiswa */
+.profil {
+    background-color: #ffffff; /* Membuat kotak profil berwarna putih */
+    width: 300px; /* Mengatur lebar kotak profil */
+    max-width: calc(100% - 82px); /* Membantu kotak menyesuaikan layar kecil */
+    margin: 35px auto; /* Membuat kotak berada di tengah halaman */
+    padding: 25px; /* Memberikan jarak antara isi dan tepi kotak */
+    border: 2px solid #ffddf3; /* Memberikan garis tepi merah muda */
+    border-radius: 15px; /* Membuat sudut kotak melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Bayangan halus pada kotak */
+}
+
+/* Mengatur foto profil */
+.profil img {
+    width: 150px; /* Lebar foto */
+    height: 150px; /* Tinggi foto */
+    border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+    object-fit: cover; /* Menyesuaikan foto agar memenuhi area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus pada foto */
+    border: 3px solid #eec4e9; /* Bingkai foto berwarna merah muda */
+}
+
+/* Mengatur nama mahasiswa */
+.nama {
+    font-size: 24px; /* Ukuran nama 24 piksel */
+    font-weight: bold; /* Membuat nama menjadi tebal */
+    margin-bottom: 10px; /* Jarak di bawah nama */
+}
+
+/* Mengatur informasi NIM dan program studi */
+.nim,
+.prodi {
+    font-size: 16px; /* Ukuran teks informasi */
+    margin: 8px 0; /* Mengatur jarak atas dan bawah */
+}
+
+/* Mengatur deskripsi mahasiswa */
+.deskripsi {
+    font-size: 16px; /* Ukuran teks deskripsi */
+    line-height: 1.5; /* Memberikan jarak antarbaris */
+    margin-top: 20px; /* Memberikan jarak dari informasi sebelumnya */
+}
+
+/* Mengatur tampilan footer */
+footer {
+    background-color: #ffc4f9; /* Warna footer sama dengan header */
+    border-top: 2px solid #fcd3ed; /* Garis atas merah muda */
+    padding: 12px; /* Memberikan ruang di dalam footer */
+    margin-top: 30px; /* Memberikan jarak dari bagian profil */
+    font-size: 14px; /* Mengatur ukuran teks footer */
+}
+
+/* Menyesuaikan tampilan pada layar HP */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 23px; /* Memperkecil judul pada layar HP */
+    }
+
+    .profil {
+        padding: 20px; /* Mengurangi jarak dalam kotak */
+    }
+}

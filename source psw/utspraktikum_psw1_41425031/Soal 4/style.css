@@ -1,0 +1,93 @@
+/*
+Nama        : Christian Steven Manurung.
+NIM         : 41425031.
+Prodi       : D4 Teknologi Rekayasa Perangkat Lunak.
+*/
+
+body {  /* Mengatur tampilan utama halaman */                 
+    display: flex;    /* Gunakan layout fleksibel */
+    flex-direction: column;    /* Susun vertikal */
+    align-items: center;    /* Rata tengah horizontal */
+    justify-content: flex-start;    /* Mulai dari atas */
+    height: 100vh;    /* Tinggi penuh layar */
+    margin: 0;    /* Hilangkan margin bawaan */
+    background: linear-gradient(135deg, 
+    #654ea3, #eaafc8, #43cea2, #185a9d);   /* 4 warna untuk di gradasi */
+    background-size: 300% 300%;    /* Perbesar gradien agar bisa bergerak */
+    animation: gradientMove 10s ease infinite;    /* Efek animasi gradien */
+    color: white;    /* Warna teks putih */
+    font-family: Arial, sans-serif;    /* Jenis font */
+}
+@keyframes gradientMove { /* Membuat animasi untuk latar belakang */
+    0% { background-position: 0% 50%; }    /* Posisi awal gradien */
+    50% { background-position: 100% 50%; }    /* Pindah ke kanan */
+    100% { background-position: 0% 50%; }    /* Kembali ke awal */
+}
+.container { /* Mengatur box */
+    background: rgba(255, 255, 255, 0.15);    /* Box transparan putih */
+    padding: 20px;    /* Jarak isi */
+    border-radius: 15px;    /* Sudut melengkung */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);    /* Bayangan halus */
+    text-align: center;    /* Teks rata tengah */
+    width: 300px;    /* Lebar box */
+    margin-top: 50px;    /* Jarak dari atas */
+}
+input, button { /* Input & Tombol */
+    width: 90%;    /* Lebar penuh */
+    padding: 10px;    /* Ruang dalam */
+    margin: 5px 0;    /* Jarak antar elemen */
+    border-radius: 8px;    /* Sudut melengkung */
+    border: none;    /* Hilangkan border */
+    font-size: 14px;    /* Ukuran teks */
+}
+button {    /* Tombol Utama */
+    background: #4facfe;    /* Warna biru lembut */
+    color: white;    /* Warna teks putih */
+    font-weight: bold;    /* Huruf tebal */
+    cursor: pointer;    /* Ubah cursor saat hover */
+    transition: 0.3s;    /* Efek transisi halus */
+}
+button:hover {
+    background: #2cb67d;    /* Warna hijau saat hover */
+}
+.jabatan-container { /* Tombol Jabatan */
+    display: flex;    /* Jadikan sejajar horizontal */
+    justify-content: center;    /* Rata tengah */
+    gap: 10px;    /* Jarak antar tombol */
+    margin: 10px 0;    /* Jarak vertikal */
+}
+.jabatan-btn {
+    flex: 1;    /* Lebar tombol merata */
+    max-width: 90px;    /* Batas lebar maksimum */
+    height: 40px;    /* Tinggi tombol */
+    background: #4facfe;    /* Warna dasar tombol */
+}
+.jabatan-btn.active {
+    background: #2cb67d;    /* Warna hijau jika dipilih */
+}
+.tabel-container { /* Tabel */
+    width: 90%;    /* Lebar tabel besar */
+    max-width: 900px;    /* Batas maksimal lebar */
+    margin-top: 30px;    /* Jarak dari box input */
+}
+table {
+    width: 100%;    /* Lebar penuh container */
+    border-collapse: collapse;    /* Hilangkan jarak antar sel */
+    background-color: rgba(255,255,255,0.15);    /* Warna latar transparan */
+    border-radius: 10px;    /* Sudut melengkung */
+    overflow: hidden;    /* Hilangkan bagian luar radius */
+}
+th, td {
+    padding: 12px;    /* Ruang dalam */
+    text-align: center;    /* Rata tengah isi */
+    border-bottom: 1px solid rgba(255,255,255,0.3);    /* Garis pemisah halus */
+    color: white;    /* Warna teks putih */
+}
+th {
+    background: rgba(0,0,0,0.3);    /* Latar kolom judul */
+}
+#tertinggi {
+    margin-top: 15px;    /* Jarak atas */
+    font-size: 16px;    /* Ukuran teks sedang */
+    text-align: center;    /* Rata tengah */
+}

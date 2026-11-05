@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Membuat tampilan menyesuaikan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Registrasi | E-Learning IT Del</title>
+
+    <!-- Menghubungkan Bootstrap untuk komponen dan layout -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Menghubungkan file CSS buatan sendiri -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Bagian utama halaman registrasi -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <!-- Card sebagai wadah form -->
+                <div class="card register-card shadow">
+                    <div class="card-body p-4 p-md-5">
+
+                        <!-- Judul dan deskripsi form -->
+                        <div class="text-center mb-4">
+                            <h1 class="h3 fw-bold">Registrasi Mahasiswa</h1>
+                            <p class="text-muted">
+                                E-Learning IT Del
+                            </p>
+                            <p class="small">
+                                Silakan isi data untuk membuat akun baru.
+                            </p>
+                        </div>
+
+                        <!-- Form pendaftaran -->
+                        <form id="formRegistrasi" novalidate>
+
+                            <!-- Input nama lengkap -->
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">
+                                    Nama Lengkap
+                                </label>
+                                <input type="text" class="form-control"
+                                       id="nama" placeholder="Masukkan nama lengkap">
+                                <div id="errorNama" class="mt-2"></div>
+                            </div>
+
+                            <!-- Input email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Email
+                                </label>
+                                <input type="text" class="form-control"
+                                       id="email" placeholder="nama@email.com">
+                                <div id="errorEmail" class="mt-2"></div>
+                            </div>
+
+                            <!-- Input password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Password
+                                </label>
+                                <input type="password" class="form-control"
+                                       id="password" placeholder="Minimal 6 karakter">
+                                <div id="errorPassword" class="mt-2"></div>
+                            </div>
+
+                            <!-- Input konfirmasi password -->
+                            <div class="mb-4">
+                                <label for="konfirmasiPassword" class="form-label">
+                                    Konfirmasi Password
+                                </label>
+                                <input type="password" class="form-control"
+                                       id="konfirmasiPassword"
+                                       placeholder="Ulangi password">
+                                <div id="errorKonfirmasi" class="mt-2"></div>
+                            </div>
+
+                            <!-- Tombol untuk memulai validasi -->
+                            <button type="submit"
+                                    class="btn btn-primary w-100">
+                                Daftar Sekarang
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Keterangan di bawah form -->
+                <p class="text-center text-muted small mt-3">
+                    E-Learning IT Del &copy; 2026
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal yang muncul jika pendaftaran berhasil -->
+    <div class="modal fade" id="modalSukses" tabindex="-1"
+         aria-labelledby="judulModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="judulModal">
+                        Pendaftaran Berhasil
+                    </h2>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Tutup"></button>
+                </div>
+
+                <div class="modal-body text-center py-4">
+                    <p class="mb-0">
+                        Pendaftaran berhasil! Selamat datang di
+                        E-Learning IT Del.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"
+                            data-bs-dismiss="modal">
+                        Tutup
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript untuk menjalankan modal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery untuk menjalankan validasi form -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Menghubungkan file JavaScript buatan sendiri -->
+    <script src="script.js"></script>
+
+</body>
+</html>

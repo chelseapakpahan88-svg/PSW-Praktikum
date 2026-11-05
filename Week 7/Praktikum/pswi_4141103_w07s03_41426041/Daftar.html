@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar | Komunitas Web Mahasiswa</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kegiatan Komunitas</h1>
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Pendaftaran Kegiatan</h2>
+        <p>Kolom bertanda wajib harus diisi.</p>
+
+        <figure>
+            <img src="https://semat.del.ac.id/assets/img/fasilitas/opentheater.jpg"
+                alt="Open Teater, lokasi kegiatan" width="400">
+            <figcaption>Lokasi kegiatan: Open Teater.</figcaption>
+        </figure>
+
+        <form action="Index.html" method="get">
+            <div class="field">
+                <label for="nama">Nama lengkap (wajib)</label>
+                <input id="nama" name="nama" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+                <label for="email">Email (wajib)</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+                <label for="telepon">Telepon (wajib)</label>
+                <input id="telepon" name="telepon" type="tel" autocomplete="tel" required>
+            </div>
+
+            <div class="field">
+                <label for="prodi">Program studi (wajib)</label>
+                <select id="prodi" name="prodi" required>
+                    <option value="">Pilih program studi</option>
+                    <option value="trpl">D4 TRPL</option>
+                    <option value="ti">D3 Teknologi Informasi</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="jumlah">Jumlah tiket (1-5, wajib)</label>
+                <input id="jumlah" name="jumlah" type="number" min="1" max="5" step="1" required>
+            </div>
+
+            <fieldset>
+                <legend>Mode kehadiran (wajib)</legend>
+                <div class="choice">
+                    <input id="luring" name="mode" type="radio" value="luring" required>
+                    <label for="luring">Luring</label>
+                </div>
+                <div class="choice">
+                    <input id="daring" name="mode" type="radio" value="daring">
+                    <label for="daring">Daring</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Minat topik HTML</legend>
+                <div class="choice">
+                    <input id="minat" name="minat" type="checkbox" value="minat">
+                    <label for="minat">Ya, saya minat</label>
+                </div>
+                <div class="choice">
+                    <input id="tidak-minat" name="minat" type="checkbox" value="tidak-minat">
+                    <label for="tidak-minat">Tidak, saya tidak minat</label>
+                </div>
+                <div class="choice">
+                    <input id="biasa" name="minat" type="checkbox" value="biasa">
+                    <label for="biasa">Biasa saja</label>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label for="kode">Kode peserta (6 angka, wajib)</label>
+                <p id="kode-help">Contoh: 001234. Gunakan tepat enam angka.</p>
+                <input id="kode" name="kode" type="text" inputmode="numeric" pattern="[0-9]{6}"
+                    title="Masukkan tepat 6 angka" aria-describedby="kode-help" required>
+            </div>
+
+            <div class="field">
+                <label for="catatan">Catatan (opsional)</label>
+                <textarea id="catatan" name="catatan" rows="4" maxlength="300"></textarea>
+            </div>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </main>
+</body>
+
+</html>

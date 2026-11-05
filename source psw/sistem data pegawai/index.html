@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Data Pegawai</title>
+
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sistem Data Pegawai</h1>
+        <p>Daftar pegawai beserta perhitungan gaji bersih.</p>
+
+        <!-- Tabel untuk menampilkan data pegawai -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pegawai</th>
+                    <th>Jabatan</th>
+                    <th>Gaji Pokok</th>
+                    <th>Tunjangan</th>
+                    <th>Pajak (10%)</th>
+                    <th>Gaji Bersih</th>
+                </tr>
+            </thead>
+
+            <tbody id="dataPegawai">
+                <!-- Data akan ditampilkan oleh JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- Menampilkan pegawai dengan gaji tertinggi -->
+        <div id="pegawaiTertinggi" class="hasil"></div>
+    </div>
+
+    <script>
+        // Menyimpan data pegawai dalam array of object
+        const pegawai = [
+            {
+                nama: "Andi",
+                jabatan: "Manager",
+                gajiPokok: 10000000
+            },
+            {
+                nama: "Budi",
+                jabatan: "Staff",
+                gajiPokok: 5000000
+            },
+            {
+                nama: "Citra",
+                jabatan: "Manager",
+                gajiPokok: 12000000
+            },
+            {
+                nama: "Dina",
+                jabatan: "Staff",
+                gajiPokok: 6000000
+            }
+        ];
+
+        // Mengambil bagian tabel yang akan diisi
+        const tabel = document.getElementById("dataPegawai");
+
+        // Variabel untuk menyimpan pegawai dengan gaji tertinggi
+        let gajiTertinggi = 0;
+        let pegawaiTertinggi = null;
+
+        // Loop untuk memproses setiap pegawai
+        for (let i = 0; i < pegawai.length; i++) {
+            const p = pegawai[i];
+
+            // Manager mendapat tunjangan 20% dari gaji pokok
+            let tunjangan = 0;
+
+            if (p.jabatan === "Manager") {
+                tunjangan = p.gajiPokok * 0.20;
+            }
+
+            // Pajak 10% dihitung dari gaji pokok
+            const pajak = p.gajiPokok * 0.10;
+
+            // Menghitung gaji bersih
+            const gajiBersih =
+                p.gajiPokok + tunjangan - pajak;
+
+            // Menampilkan data ke dalam tabel HTML
+            tabel.innerHTML += `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${p.nama}</td>
+                    <td>${p.jabatan}</td>
+                    <td>${p.gajiPokok.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                        maximumFractionDigits: 0
+                    })}</td>
+                    <td>${tunjangan.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                        maximumFractionDigits: 0
+                    })}</td>
+                    <td>${pajak.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                        maximumFractionDigits: 0
+                    })}</td>
+                    <td>${gajiBersih.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                        maximumFractionDigits: 0
+                    })}</td>
+                </tr>
+            `;
+
+            // Memeriksa apakah gaji pegawai ini paling tinggi
+            if (gajiBersih > gajiTertinggi) {
+                gajiTertinggi = gajiBersih;
+                pegawaiTertinggi = p;
+            }
+        }
+
+        // Menghitung kembali tunjangan pegawai dengan gaji tertinggi
+        const tunjanganTertinggi =
+            pegawaiTertinggi.jabatan === "Manager"
+                ? pegawaiTertinggi.gajiPokok * 0.20
+                : 0;
+
+        const gajiBersihTertinggi =
+            pegawaiTertinggi.gajiPokok +
+            tunjanganTertinggi -
+            (pegawaiTertinggi.gajiPokok * 0.10);
+
+        // Menampilkan hasil di bawah tabel
+        document.getElementById("pegawaiTertinggi").innerHTML = `
+            <h2>Gaji Bersih Tertinggi</h2>
+            <p>Nama: <strong>${pegawaiTertinggi.nama}</strong></p>
+            <p>Jabatan: ${pegawaiTertinggi.jabatan}</p>
+            <p>Gaji Bersih: <strong>${gajiBersihTertinggi.toLocaleString(
+                "id-ID",
+                {
+                    style: "currency",
+                    currency: "IDR",
+                    maximumFractionDigits: 0
+                }
+            )}</strong></p>
+        `;
+    </script>
+
+</body>
+</html>

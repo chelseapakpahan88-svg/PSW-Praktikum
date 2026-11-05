@@ -1,0 +1,246 @@
+:root {
+        --brand: #175cd3;
+        --space: 1rem;
+        --surface: white;
+        --ink: #243244;
+}
+
+body {
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 1rem;
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--ink);
+        background: #fefeff;
+}
+
+header,
+main {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: rgb(255, 255, 255);
+        border: 1px solid #ddd;
+}
+
+h1 {
+        font-size: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+        line-height: 1.2;
+        color: var(--brand);
+}
+
+p {
+        max-width: 65ch;
+}
+
+img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 4%;
+}
+
+input,
+select,
+textarea {
+        max-width: 100%;
+}
+
+button {
+        padding: .75rem 1rem;
+        color: rgb(252, 253, 254);
+        background: var(--brand);
+        border: 0;
+        margin: auto;
+        border-radius: 5%;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+        outline: 3px solid var(--brand);
+        outline-offset: 3px;
+}
+
+.nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        list-style: none;
+}
+
+.nav-list a {
+        font-weight: bold;
+        text-decoration: none;
+        padding: .25rem .5rem;
+        border-radius: 4px;
+        transition: color .2s, background-color .2s;
+}
+
+.nav-list a:hover {
+        color: var(--brand);
+        background-color: #eef4ff;
+        text-decoration: underline;
+}
+
+.nav-list a:focus-visible {
+        color: var(--brand);
+        background-color: #eef4ff;
+}
+
+
+.catalog {
+        display: grid;
+        flex-wrap: wrap;
+        gap: 1rem;
+        grid-template-columns: 3fr;
+}
+
+.catalog .card:hover {
+        color: var(--brand);
+        background-color: #eef4ff;
+}
+
+.card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 15rem;
+        gap: .5rem;
+        min-width: 0;
+        margin: 12px;
+        padding: var(--space);
+        background: var(--surface);
+        border: 1px solid #ccd;
+        border-radius: 5%;
+}
+
+.card h2 {
+        overflow-wrap: anywhere;
+}
+
+.card h2,
+.card p {
+        margin: 0;
+}
+
+.card h3 {
+        overflow-wrap: anywhere;
+}
+
+.card h3,
+.card p {
+        margin: 0;
+}
+
+.card p {
+        margin: 0;
+}
+
+.card a {
+        align-self: start;
+}
+
+@media (min-width: 48rem) {
+        .catalog {
+                grid-template-columns: repeat(3, 1fr);
+        }
+}
+
+@container (min-width: 30rem) {
+        .card {
+                padding: 1.5rem;
+        }
+}
+
+@media (prefers-reduced-motion: reduce) {
+        .nav-list a {
+                transition: none;
+        }
+}
+figcaption {
+        text-align: center;
+}
+
+/* ===== Form pendaftaran ===== */
+.field {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        margin-bottom: 1rem;
+}
+
+.field label {
+        font-weight: bold;
+}
+
+.field p {
+        margin: 0;
+        font-size: .9rem;
+}
+
+input,
+select,
+textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: .5rem;
+        font: inherit;
+        border: 1px solid #ccd;
+        border-radius: 6px;
+}
+
+/* Radio tidak boleh ikut melebar 100% */
+input[type="radio"],
+input[type="checkbox"] {
+        width: auto;
+}
+
+fieldset {
+        margin-bottom: 1rem;
+        border: 1px solid #ccd;
+        border-radius: 8px;
+}
+
+.choice {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+}
+
+button {
+        cursor: pointer;
+}
+
+button:hover {
+        filter: brightness(1.15);
+}
+
+/*tabel*/
+table {
+        width: 100%;
+        border-collapse: collapse;
+}
+
+th,
+td {
+        padding: .5rem;
+        border: 1px solid #ccd;
+        text-align: left;
+}
+
+thead th {
+        color: white;
+        background: var(--ink);
+}
+
+tbody tr:hover {
+        background: #eef4ff;
+}
+
+/* Tabel bersarang tidak perlu garis tepi ganda */
+td table {
+        margin: 0;
+}

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Mengatur karakter agar teks ditampilkan dengan benar -->
+    <meta charset="UTF-8">
+
+    <!-- Membuat halaman menyesuaikan ukuran layar perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Menentukan judul pada tab browser -->
+    <title>PinkStore - Toko Online</title>
+
+    <!-- Menghubungkan HTML dengan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header berisi logo dan navigasi -->
+    <header class="header">
+        <h1 class="logo">PinkStore</h1>
+
+        <!-- Navigasi untuk berpindah ke bagian halaman -->
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Konten utama halaman toko online -->
+    <main id="home">
+
+        <!-- Judul bagian produk -->
+        <section id="produk">
+            <h2>Produk Kami</h2>
+            <p class="deskripsi">
+                Temukan produk favoritmu di PinkStore!
+            </p>
+
+            <!-- Wadah untuk menampilkan tiga produk -->
+            <div class="daftar-produk">
+
+                <!-- Produk pertama -->
+                <article class="kartu-produk">
+                    <img
+                        src="Gambar/gambar_1.jpg"
+                        alt="Kamera"
+                    >
+                    <h3>Kamera</h3>
+                    <p class="harga">Rp1.500.000</p>
+                </article>
+
+                <!-- Produk kedua -->
+                <article class="kartu-produk">
+                    <img
+                        src="Gambar/gambar_2.jpg"
+                        alt="Parfume Miss Dior"
+                    >
+                    <h3>Parfume Miss Dior</h3>
+                    <p class="harga">Rp3.000.000</p>
+                </article>
+
+                <!-- Produk ketiga -->
+                <article class="kartu-produk">
+                    <img
+                        src="Gambar/gambar_3.jpg"
+                        alt="Kipas"
+                    >
+                    <h3>Kipas</h3>
+                    <p class="harga">Rp500.000</p>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer berisi informasi hak cipta dan kontak -->
+    <footer id="kontak">
+        <p>&copy; 2026 PinkStore. Hak cipta dilindungi.</p>
+        <p>Kontak: pinkstore@email.com</p>
+    </footer>
+
+</body>
+</html>

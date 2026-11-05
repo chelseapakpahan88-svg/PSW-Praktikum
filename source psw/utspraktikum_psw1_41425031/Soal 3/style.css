@@ -1,0 +1,182 @@
+/* Reset CSS untuk menghindari margin dan padding default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container untuk konten utama */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Artikel Layout */
+.articles {
+    flex: 3;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+article h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+article h2:hover {
+    color: #f4a261;
+}
+
+article .summary {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Sidebar */
+aside {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+aside ul li a:hover {
+    color: #f4a261;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet/desktop */
+@media (min-width: 768px) {
+    .articles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        display: flex;
+    }
+}
+
+/* Large screens (Optional) */
+@media (min-width: 1024px) {
+    .articles {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile-first layout */
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    article h2 {
+        font-size: 1.2rem;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}

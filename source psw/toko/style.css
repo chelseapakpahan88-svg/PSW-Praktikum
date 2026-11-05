@@ -1,0 +1,137 @@
+
+/* Mengatur tampilan dasar halaman */
+* {
+    box-sizing: border-box; /* Memasukkan padding dan border ke ukuran elemen */
+}
+
+body {
+    margin: 0; /* Menghilangkan jarak bawaan browser */
+    font-family: Arial, sans-serif; /* Mengatur jenis huruf */
+    background-color: #fff5f8; /* Memberikan latar belakang pink lembut */
+    color: #444444; /* Mengatur warna teks */
+}
+
+/* Mengatur header menggunakan Flexbox */
+.header {
+    display: flex; /* Menyusun logo dan navigasi dalam satu baris */
+    flex-direction: column; /* Menyusun elemen ke bawah pada layar mobile */
+    align-items: center; /* Menempatkan elemen di tengah */
+    gap: 10px; /* Memberikan jarak antar elemen */
+    padding: 20px; /* Memberikan ruang di dalam header */
+    background-color: #f3b5cb; /* Memberikan warna pink */
+}
+
+/* Mengatur tampilan logo */
+.logo {
+    margin: 0; /* Menghilangkan jarak luar logo */
+    color: #ffffff; /* Membuat teks logo putih */
+}
+
+/* Mengatur daftar navigasi */
+.nav-list {
+    display: flex; /* Menyusun menu secara mendatar */
+    flex-wrap: wrap; /* Mengizinkan menu pindah baris jika diperlukan */
+    justify-content: center; /* Menempatkan menu di tengah */
+    gap: 20px; /* Memberikan jarak antar menu */
+    list-style: none; /* Menghilangkan tanda bullet */
+    padding: 0; /* Menghilangkan padding bawaan */
+    margin: 0; /* Menghilangkan margin bawaan */
+}
+
+/* Mengatur tautan navigasi */
+.nav-list a {
+    text-decoration: none; /* Menghilangkan garis bawah tautan */
+    color: #ffffff; /* Membuat teks navigasi putih */
+    font-weight: bold; /* Membuat teks navigasi tebal */
+}
+
+/* Memberikan efek saat kursor diarahkan ke menu */
+.nav-list a:hover {
+    color: #8f3d60; /* Mengubah warna teks saat diarahkan */
+}
+
+/* Mengatur konten utama */
+main {
+    padding: 25px 15px; /* Memberikan jarak di sekitar konten */
+}
+
+/* Mengatur judul produk */
+#produk h2 {
+    text-align: center; /* Menempatkan judul di tengah */
+    color: #c75d88; /* Memberikan warna pink tua */
+}
+
+/* Mengatur deskripsi di bawah judul */
+.deskripsi {
+    text-align: center; /* Membuat deskripsi berada di tengah */
+    margin-bottom: 25px; /* Memberikan jarak ke daftar produk */
+}
+
+/* Mobile first: satu kolom produk pada layar kecil */
+.daftar-produk {
+    display: grid; /* Menggunakan CSS Grid */
+    grid-template-columns: 1fr; /* Menampilkan satu produk per baris */
+    gap: 20px; /* Memberikan jarak antar kartu */
+    max-width: 1000px; /* Membatasi lebar daftar produk */
+    margin: 0 auto; /* Menempatkan daftar di tengah */
+}
+
+/* Mengatur kartu setiap produk */
+.kartu-produk {
+    background-color: #ffffff; /* Memberikan latar belakang putih */
+    padding: 15px; /* Memberikan ruang di dalam kartu */
+    border-radius: 12px; /* Membuat sudut kartu melengkung */
+    text-align: center; /* Menempatkan teks di tengah */
+    box-shadow: 0 4px 10px #ead5dd; /* Memberikan bayangan lembut */
+}
+
+/* Mengatur gambar produk */
+.kartu-produk img {
+    width: 100%; /* Gambar mengikuti lebar kartu */
+    height: 200px; /* Menyamakan tinggi gambar */
+    object-fit: contain; /* Menampilkan gambar tanpa memotongnya */
+    border-radius: 8px; /* Membuat sudut gambar melengkung */
+}
+
+/* Mengatur nama produk */
+.kartu-produk h3 {
+    color: #c75d88; /* Memberikan warna pink pada nama produk */
+}
+
+/* Mengatur harga produk */
+.harga {
+    font-weight: bold; /* Membuat harga menjadi tebal */
+    color: #d14d80; /* Memberikan warna pada harga */
+    font-size: 18px; /* Mengatur ukuran teks harga */
+}
+
+/* Mengatur footer */
+footer {
+    background-color: #f3b5cb; /* Memberikan latar belakang pink */
+    color: #ffffff; /* Membuat teks putih */
+    text-align: center; /* Menempatkan teks di tengah */
+    padding: 15px; /* Memberikan ruang di dalam footer */
+    margin-top: 30px; /* Memberikan jarak dari konten utama */
+}
+
+/* Tampilan untuk tablet dan desktop */
+@media (min-width: 600px) {
+    /* Menyusun header secara mendatar */
+    .header {
+        flex-direction: row; /* Logo dan navigasi berada satu baris */
+        justify-content: space-between; /* Memberi jarak antara logo dan menu */
+    }
+
+    /* Menampilkan dua kolom produk */
+    .daftar-produk {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tampilan untuk desktop yang lebih lebar */
+@media (min-width: 900px) {
+    /* Menampilkan tiga kolom produk */
+    .daftar-produk {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -52,4 +52,4 @@ git push	Mengirim commit ke repositori jarak jauh.
 git pull	Mengambil dan menggabungkan perubahan terbaru dari repositori jarak jauh.
 git clone URL	Menyalin repositori dari alamat yang diberikan.
 
-AI= Saya menggunakan Chat GPT untuk membantu saya memperbaiki kode saya yang bermasalah, membantu saya menyempurnakan kalimat di readme saya dan membantu saya menambahkan kode css.
+AI= Saya menggunakan Chat GPT untuk membantu saya memperbaiki kode saya yang bermasalah, membantu saya menyempurnakan kalimat di readme saya, dan membantu saya dalam beberapa pengerjaan lainnya.

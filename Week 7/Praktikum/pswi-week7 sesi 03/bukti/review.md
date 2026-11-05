@@ -1,0 +1,4 @@
+Komentar oleh teman : Berlita Siburian
+Berdasarkan hasil pemeriksaan, proyek website sudah memiliki struktur dasar yang cukup baik, tetapi masih ada beberapa hal yang perlu diperbaiki, seperti tautan CSS, navigasi, dan validasi formulir. README juga perlu dilengkapi dengan cara menjalankan, perubahan, hasil pengujian, dan batasan proyek. Selain itu, perlu ditambahkan review.md, bukti pengujian, serta dokumentasi proses branch, merge, dan commit agar lebih sesuai dengan modul praktikum.
+1. Memperbaiki tautan CSS pada daftar.html agar nama file sesuai dengan style.css.
+2. Memperbaiki navigasi halaman dengan menyesuaikan penanda aria-current="page" pada setiap halaman.

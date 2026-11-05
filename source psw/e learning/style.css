@@ -1,0 +1,67 @@
+
+/* Mengatur tampilan dasar halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4ff;
+    color: #24324a;
+    min-height: 100vh;
+}
+
+/* Mengatur kartu tempat form berada */
+.register-card {
+    border: none;
+    border-radius: 18px;
+    background-color: #ffffff;
+}
+
+/* Memberi warna pada judul */
+h1 {
+    color: #2346a0;
+}
+
+/* Mengatur bentuk input */
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Memberikan efek saat input dipilih */
+.form-control:focus {
+    border-color: #5278e8;
+    box-shadow: 0 0 0 0.2rem rgba(82, 120, 232, 0.15);
+}
+
+/* Mengatur tombol daftar */
+.btn-primary {
+    background-color: #3157c8;
+    border-color: #3157c8;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Efek saat kursor berada di atas tombol */
+.btn-primary:hover {
+    background-color: #23439e;
+    border-color: #23439e;
+}
+
+/* Mengatur pesan kesalahan agar mudah dibaca */
+.alert-danger {
+    font-size: 0.875rem;
+    padding: 8px 12px;
+    margin-bottom: 0;
+    border-radius: 6px;
+}
+
+/* Menyesuaikan jarak pada layar ponsel */
+@media (max-width: 576px) {
+    main.container {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .register-card .card-body {
+        padding: 24px !important;
+    }
+}

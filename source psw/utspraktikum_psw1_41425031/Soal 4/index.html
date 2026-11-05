@@ -1,0 +1,45 @@
+<!--
+Nama        : Christian Steven Manurung.
+NIM         : 41425031.
+Prodi       : D4 Teknologi Rekayasa Perangkat Lunak.
+-->
+
+<!DOCTYPE html>   
+<html lang="en">                              
+<head>
+    <meta charset="UTF-8">                      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Praktikum Week 06 - 3. Pegawai – Tunjangan & Pajak</title>          
+    <link rel="stylesheet" href="style.css">      
+</head>
+<body>
+    <div class="container"> <!-- Box utama berisi input -->
+        <h2>Data Pegawai dan Gaji</h2> <!-- Judul di dalam box -->
+        <input type="text" id="nama" placeholder="Masukkan Nama Pegawai"> <!-- Input untuk nama -->
+        <div class="jabatan-container"> <!-- Wadah tombol jabatan -->
+            <button type="button" class="jabatan-btn"onclick="pilihJabatan('Manager')">Manager</button>
+            <button type="button" class="jabatan-btn"onclick="pilihJabatan('Staff')">Staff</button>
+            <button type="button" class="jabatan-btn"onclick="pilihJabatan('Admin')">Admin</button>
+        </div>
+        <input type="number" id="gaji" placeholder="Masukkan Gaji Pokok">   <!-- Input untuk gaji -->
+        <button onclick="tambahPegawai()">Tambah Pegawai</button> <!-- Tombol tambah -->
+    </div>
+    <div class="tabel-container"> <!-- Wadah untuk tabel data -->
+        <table id="tabelPegawai"> <!-- Tabel daftar pegawai -->
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Gaji Pokok</th>
+                    <th>Tunjangan</th>
+                    <th>Pajak</th>
+                    <th>Gaji Bersih</th>
+                </tr>
+            </thead>
+            <tbody></tbody> <!-- Isi tabel akan dibuat via JS -->
+        </table>
+        <p id="tertinggi"></p>  <!-- Teks pegawai tertinggi -->
+    </div>
+    <script src="script.js"></script> <!-- Hubungkan file JavaScript -->
+</body>
+</html>
