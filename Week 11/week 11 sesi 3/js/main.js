@@ -1,46 +1,28 @@
-const daftar = document.querySelector("#daftar");
-const li = document.createElement("li");
-li.textContent = "Rina";
-daftar.append(li);
-
-
-let peserta = [{ id: 1, nama: "Rina" }, { id: 2, nama: "Budi" }];
-function render() {
- daftar.replaceChildren();
- for (const p of peserta) {
-  const li = document.createElement("li");
-  li.textContent = p.nama; daftar.append(li);
-  
-
-/* TOMBOL HAPUS SAAT RENDER */
-  const btn = document.createElement("button");
-btn.type = "button"; btn.textContent = "Hapus";
-btn.dataset.id = String(p.id);
-li.append(btn);
- }
-}
-
-render();
-
-/*DELEGATION DAN PENGUJIAN */
-daftar.addEventListener("click", event => {
- const btn = event.target.closest("button[data-id]");
- if (!btn || !daftar.contains(btn)) return;
- const id = Number(btn.dataset.id);
- peserta = peserta.filter(p => p.id !== id);
- render();
-});
-
+const tombol = document.querySelector("#muat");
 const pesan = document.querySelector("#pesan");
-pesan.textContent = peserta.length ? "" : "Belum ada peserta";
-
-/* TAMBAH PESERTA */
-const form = document.querySelector("#form-peserta");
-let berikutnya = 3;
-form.addEventListener("submit", event => {
- event.preventDefault();
- const nama = String(new FormData(form).get("nama") ?? "").trim();
- if (!nama) { pesan.textContent = "Nama harus diisi"; return; }
- peserta.push({ id: berikutnya++, nama });
- render(); form.reset();
-});
+const daftar = document.querySelector("#daftar");
+async function muat() {
+    tombol.disabled = true;
+    pesan.textContent = "Memuat data...";
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 1000);
+    try {
+        const r = await fetch("./data/kegiatan.json");
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const data = await r.json(); console.log(data);
+        if (!Array.isArray(data)) throw new Error("Data harus array");
+        daftar.replaceChildren();
+        for (const k of data) {
+            if (typeof k.judul !== "string") throw new Error("Judul tidak sesuai");
+            const li = document.createElement("li");
+            li.textContent = k.judul; daftar.append(li);
+        }
+        pesan.textContent = data.length
+            ? `${data.length} kegiatan dimuat` : "Belum ada kegiatan";
+    } catch (error) { pesan.textContent = "Gagal memuat"; console.error(error); }
+    finally {
+        tombol.disabled = false;
+        clearTimeout(timer); tombol.disabled = false;
+    }
+}
+tombol.addEventListener("click", muat);
